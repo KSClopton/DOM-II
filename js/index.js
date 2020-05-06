@@ -16,7 +16,7 @@ let bodyColor = get('body')
 let getForm = get('.form input')
 let getParagraphs = getAll('p')
 let clickables = getAll('a')
-
+let getImages = getAll('img')
 // * [ ] `mouseover`
 
 function turnShark(event){
@@ -59,8 +59,12 @@ headerDrag.forEach(element => {element.addEventListener('drag', dragHeading)});
 
 // * [ ] `load`
 
+function addImageBorder(event){
+    getImages.forEach(item => item.style.border = "dashed grey 2px")
+}
 
-// headerIntro.addEventListener('loadstart', makeColorChange)
+window.addEventListener('load', addImageBorder)
+
 
 // * [ ] `focus`
 
@@ -73,6 +77,13 @@ getForm.addEventListener('focus', changeForm)
 
 // * [ ] `resize`
 
+// turning the background blue
+
+function turnBlue(event){
+    bodyWheel.style.backgroundColor = 'lightblue'
+}
+
+window.addEventListener('resize', turnBlue)
 
 
 // * [ ] `scroll`
